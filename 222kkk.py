@@ -11,12 +11,11 @@ from torchvision import datasets, transforms
 
 
 
-m = nn.LogSoftmax()
-mm=nn.Softmax()
-input = torch.tensor([[1.0,2],[1,0]])
-# input = torch.randn(2, 3)
-# print(input)
-output = m(input)
-output2=mm(input)
-print(output)
-print(output2)
+
+input = torch.randn(128,10)
+tar=torch.randn(128,10)
+lossfun=nn.NLLLoss(reduction="sum")
+loss1=lossfun(tar,input)
+loss2=lossfun(input,tar)
+print(loss1)
+print(loss2)
