@@ -20,5 +20,9 @@ from torchvision import datasets, transforms
 
 
 
-
+m = nn.LogSoftmax(dim=0)
+input = torch.randn(2, 3)
+print(input)
+output = m(input)
+print(output)
 

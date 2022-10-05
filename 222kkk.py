@@ -12,10 +12,11 @@ from torchvision import datasets, transforms
 
 
 
-input = torch.randn(128,10)
-tar=torch.randn(128,10)
-lossfun=nn.NLLLoss(reduction="sum")
-loss1=lossfun(tar,input)
-loss2=lossfun(input,tar)
-print(loss1)
-print(loss2)
+# With Learnable Parameters
+m = nn.BatchNorm2d(3)
+# Without Learnable Parameters
+m = nn.BatchNorm2d(3, affine=False)
+input = torch.randn(2, 3, 3, 4)
+print(input)
+output = m(input)
+print(output)
