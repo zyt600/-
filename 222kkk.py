@@ -9,14 +9,18 @@ from torchvision.transforms import ToTensor
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
 
-
-
-
-# With Learnable Parameters
-m = nn.BatchNorm2d(3)
-# Without Learnable Parameters
-m = nn.BatchNorm2d(3, affine=False)
-input = torch.randn(2, 3, 3, 4)
-print(input)
-output = m(input)
-print(output)
+lossFunction = nn.NLLLoss()
+output = torch.tensor([[1.1, 0.888, 13.11111]])
+softmax = nn.Softmax(dim=0)
+output2 = softmax(output)
+print("output2",output2)
+output3=torch.log(output2)
+print("output3",output3)
+target = torch.tensor([1])
+# loss = lossFunction(output, target)
+# loss = lossFunction(output, target)
+# loss = lossFunction(output, target)
+# loss = lossFunction(output, target)
+# loss = lossFunction(output, target)
+loss = lossFunction(output, target)
+print("loss",loss)
