@@ -11,19 +11,28 @@ import random
 import numpy as np
 
 ebd = torch.nn.Embedding(2, 5)
-input = torch.tensor([1])
-print(input)
+
+input = torch.tensor([[1], [1]])
+print("input", input)
+
 ebdout = ebd(input)
-print(ebdout, ebdout.size())
-# print(ebdout.view(1,1,-1))
+print("ebdout")
+print(ebdout)
+print("ebdout.size()")
+print(ebdout.size())
+
 embed_size = 5
 num_hiddens = 8
+
+print("ebdout.view(1, 2, -1)")
+print(ebdout.view(1, 2, -1))
+
 lstm = nn.LSTM(embed_size, hidden_size=num_hiddens)
-zeroH = torch.zeros(8).view(1, 1, -1)
-zeroC = zeroH[:]
-print(zeroC)
-outlstm = lstm(ebdout.view(1, 1, -1), zeroH, zeroC)
+# zeroH = torch.zeros(8).view(1, 1, -1)
+# zeroC = zeroH[:]
+# print(zeroC)
+#
+# outlstm, rubish = lstm(ebdout.view(1, 1, -1), (zeroH, zeroC))
+outlstm, rubish = lstm(ebdout.view(1, 2, -1))
 print()
-print()
-for itm in outlstm:
-    print(itm)
+print(outlstm)
