@@ -1,21 +1,20 @@
 import os
 import re
+import torch
+import os
+import collections
+from torch import nn, optim
+from torch.utils.data import TensorDataset, DataLoader, Dataset
+import torch.nn.functional as F
+from torch.utils.data.dataset import T_co
+# from tqdm import tqdm
+import math
+import random
+import numpy as np
 
-data_dir = 'sentiment'
-trainTextPath = data_dir + os.sep + "train_text.txt"
-f = open(trainTextPath, mode="r", encoding="utf-8")
-textList = f.read().lower().strip()  # .split("\n")
-textList = textList.split("\n")
-print(len(textList))
-newList = []
-pp=1
-for itm in textList:
-    print(itm)
-    itm=re.sub(r"http[^ ]*", " ", itm)
-    newList.append(itm)
-    print(itm)
-    pp+=1
-    if pp>=500:
-        break
-# textList=[]
 
+
+
+inputs = torch.tensor([0 for i in range(50)])
+inputs.to("cuda:0")
+print(inputs.device)
