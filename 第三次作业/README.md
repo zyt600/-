@@ -1,4 +1,4 @@
-（[google Colab链接](https://colab.research.google.com/drive/1ZdH8EzzvxmUCm4g2kcFbw9RsBpAhj1DA?usp=sharing)）：使用预训练模型CLIP进行文本到图片检索 (Image-Text Retrieval)。具体的：利用预训练好的CLIP模型在 Flickr30K 数据集的测试集划分上对图片和文本进行编码，并设计相似度函数返回与每条文本 (共5000条) 语义相关的图片，报告模型性能 (R@1, R@5, R@10)。
+（[google Colab链接](https://colab.research.google.com/drive/1ZdH8EzzvxmUCm4g2kcFbw9RsBpAhj1DA?usp=sharing)）：使用预训练CLIP模型在Flickr30K 的测试集上对图片和文本进行编码，并使用余弦作为相似度函数，返回与每条文本语义相关的图片，R@1，R@5，R@10分别为68.0%，89.5%，93.8%。
 <!-- 第三次作业
 作业要求：本次作业要求使用预训练模型CLIP[1] 进行文本到图片检索 (Image-Text Retrieval)。具体地，本次作业不要求训练模型，只需要利用预训练好的CLIP模型在 Flickr30K 数据集[4] 的测试集划分[5] 上对图片和文本进行编码[3]，并设计 (一种或多种) 相似度函数返回与每条文本 (共 5000 条) 语义相关的图片，报告模型性能 (R@1, R@5, R@10)。
 作业分数：本次作业共十分。（R@1:45, R@5: 70, R@10: 80以上即可m满分）
